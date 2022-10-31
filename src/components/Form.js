@@ -1,17 +1,28 @@
-import React from 'react'
+import React, { Component } from 'react'
+import './Form.css'
 
-const Form = () => {
+class Form extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      date: '',
+      time: '',
+      number: '',
+    }
+  }
+
   return (
     <form className='resy-form'>
       <label htmlFor='name'/>
-      <input type='input' name='name' id='name' placeholder='Name'/>
+      <input type='input' className='inputs' name='name' id='name' placeholder='Name'/>
       <label htmlFor='date'/>
-      <input type='date' name='date' id='date'/>
+      <input type='date' className='inputs' name='date' id='date'/>
       <label htmlFor='time'/>
-      <input type='time' name='time' id='time'/>
+      <input type='time' className='inputs' name='time' id='time'/>
       <label htmlFor='number'/>
-      <input type='input' name='number' id='number' placeholder='Number of guests'/>
-      <button type='submit'>Make Reservation</button>
+      <input type='input' className='inputs' name='number' id='number' placeholder='Number of guests'/>
+      <button type='submit' className='inputs' >Make Reservation</button>
     </form>
   )
 }

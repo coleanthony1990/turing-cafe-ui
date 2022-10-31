@@ -1,0 +1,9 @@
+.resy-form {
+  display: flex;
+  justify-content: space-around;
+}
+.inputs {
+  margin: 20px;
+  width: 200px;
+  cursor: pointer;
+}
