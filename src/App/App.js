@@ -17,8 +17,8 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
-  addReservation(newResy) {
-    this.setState({reservations: this.state.reservations, newResy})
+  addReservation = (newResy) => {
+    this.setState({reservations: [...this.state.reservations, newResy]})
   }
 
 

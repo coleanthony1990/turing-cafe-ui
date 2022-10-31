@@ -11,8 +11,17 @@ class Form extends Component {
       number: '',
     }
   }
+  sendReservation = e => {
+    e.preventDefault();
+    const newResy = {
+      id: Date.now(),
+      ...this.state
+    }
+    this.props.addReservation(newResy)
+  }
+
   handleChange = async (e) => {
-    await this.setState({[e.target.name]: e.target.value})
+   await this.setState({[e.target.name]: e.target.value})
     
   }
 
@@ -27,7 +36,7 @@ class Form extends Component {
         <input type='time' className='inputs' name='time' id='time' value={this.state.time} onChange={event => this.handleChange(event)}/>
         <label htmlFor='number'/>
         <input type='input' className='inputs' name='number' id='number' value={this.state.number} onChange={event => this.handleChange(event)} placeholder='Number of guests'/>
-        <button type='submit' className='inputs' >Make Reservation</button>
+        <button className='inputs' onClick={event => this.sendReservation(event)}>Make Reservation</button>
       </form>
     )
   }
