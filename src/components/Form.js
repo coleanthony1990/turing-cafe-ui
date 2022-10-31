@@ -11,18 +11,22 @@ class Form extends Component {
       number: '',
     }
   }
-  
+  handleChange = async (e) => {
+    await this.setState({[e.target.name]: e.target.value})
+    
+  }
+
   render() {
     return (
       <form className='resy-form'>
         <label htmlFor='name'/>
-        <input type='input' className='inputs' name='name' id='name' placeholder='Name'/>
+        <input type='input' className='inputs' name='name' id='name' value={this.state.name} onChange={event => this.handleChange(event)} placeholder='Name'/>
         <label htmlFor='date'/>
-        <input type='date' className='inputs' name='date' id='date'/>
+        <input type='date' className='inputs' name='date' id='date' value={this.state.date} onChange={event => this.handleChange(event)}/>
         <label htmlFor='time'/>
-        <input type='time' className='inputs' name='time' id='time'/>
+        <input type='time' className='inputs' name='time' id='time' value={this.state.time} onChange={event => this.handleChange(event)}/>
         <label htmlFor='number'/>
-        <input type='input' className='inputs' name='number' id='number' placeholder='Number of guests'/>
+        <input type='input' className='inputs' name='number' id='number' value={this.state.number} onChange={event => this.handleChange(event)} placeholder='Number of guests'/>
         <button type='submit' className='inputs' >Make Reservation</button>
       </form>
     )
