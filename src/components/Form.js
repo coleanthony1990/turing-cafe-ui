@@ -10,7 +10,7 @@ class Form extends Component {
       time: '',
       number: '',
     }
-  }
+  
 
   return (
     <form className='resy-form'>
